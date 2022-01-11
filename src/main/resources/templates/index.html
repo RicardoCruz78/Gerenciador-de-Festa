@@ -57,6 +57,9 @@ th:field="*{observacao}"/>
 <td th:text="${administrador.email}"></td>
 <td th:text="${administrador.senha}"></td> 
 <td th:text="${administrador.observacao}"></td> 
+<td><a href="#" class="btn btn-warning">Alterar</td>
+<td><a href="#"th:onclick="'if(confirm(\'Confirma?\')){window.location.href= \''+ @{/administradores/{id}(id=${administrador.id})}
+ + '/excluir\'}'" class="btn btn-danger">Excluir</td></a>
 
 </tr>
 
