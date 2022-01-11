@@ -8,6 +8,6 @@ public class GerenciarFestaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciarFestaApplication.class, args);
-	}
+	  }
 
-}
+}  
