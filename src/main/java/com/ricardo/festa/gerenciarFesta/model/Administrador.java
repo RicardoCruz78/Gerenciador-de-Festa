@@ -2,8 +2,9 @@ package com.ricardo.festa.gerenciarFesta.model;
 
 
 import java.io.Serializable;
+import java.util.Optional;
 
-import javax.persistence.Column;
+import javax.persistence.Column ;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ import lombok.AllArgsConstructor ;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -43,5 +45,10 @@ public class Administrador implements Serializable {
 	@Column(name="observacaoAdm" )
 	private String observacao;
 
+	
+
+	
+
+	
 	
 }

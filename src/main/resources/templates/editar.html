@@ -1,0 +1,78 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Editar administradores</title>
+
+
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+rel="stylesheet"/>
+
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+rel="stylesheet"/>
+</head>
+
+<body >
+<div class="container">
+
+
+   <div class="panel panel-default" style="margin: 10px">
+ 
+<div class="panel-heading">
+
+<h1  class="panel-title">Editar Administradores</h1>
+</div>
+<div class="panel-body">
+	
+	
+
+  <div class="form-group">
+	<form method="POST" action="/administradores/" onsubmit="return confirm('Confirmação')">
+
+    <label for="nome">Nome</label>
+       <input type="text" class="form-control" th:value="${administrador?.nome}"required id="nome" name="nome"  >
+
+    </div>
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control"th:value="${administrador?.email}" required id="email" name="email" >
+     </div>
+    <div class="form-group">
+    <label for="senha">Senha</label>
+    <input type="senha" class="form-control" th:value="${administrador?.senha}"required  id="senha"  name= "senha">
+     </div>
+    <div class="form-group">
+     <label for="observaçao">Observação</label>
+    <textarea class ="form-control" id="observacao" th:value="${administrador?.observacao}" name= "observacao" ></textarea>    </div>
+    
+    
+  
+  
+ 
+   
+  
+  <button type="submit" class="btn btn-primary">Enviar</button>
+ 
+ </div>
+
+
+
+   
+<thead>
+<tr>
+</form>
+</thead>
+<tbody>
+<tr>
+
+
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

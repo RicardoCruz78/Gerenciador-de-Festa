@@ -6,10 +6,8 @@ xmlns:th="http://www.thymeleaf.org">
 <meta name="viewport" content="width=device-width" />
 <title>lista de administradores</title>
 
-
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
 rel="stylesheet"/>
-
 
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
 rel="stylesheet"/>
@@ -18,51 +16,45 @@ rel="stylesheet"/>
 
 <form class="form-inline" method="POST" th:object="${administrador}"
 th:action="@{/administradores}" style="margin: 20px 0">
-<div class="form-group">
-<input type="text" class="form-control"
-placeholder="Nome"
-th:field="*{nome}"/>
-<input type="text" class="form-control"
-placeholder="Email"
-th:field="*{email}"/>
-<input type="text" class="form-control"
-placeholder="Senha"
-th:field="*{senha}"/>
-<input type="text" class="form-control"
-placeholder="Observacao"
-th:field="*{observacao}"/>
-<button type="submit" class="btn btn-primary">Adicionar</button>
-</div>
-</form>
 
+<a href="/administradores/novoAdm" class="btn btn-primary"style="margin-rigth: 20px;
+">Novo</a>
+
+<h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Adminitradores</h6>
 
 <div class="panel panel-default" style="margin: 10px">
 <div class="panel-heading">
-<h1 class="panel-title">Administradores</h1>
+<h1 class="panel-title"> Lista de Administradores</h1>
 </div>
+
 <div class="panel-body">
 <table class="table"> 
+
 <thead>
 <tr>
+<th>id</th>
 <th>nome</th>
 <th>email</th>
 <th>senha</th>
 <th>observacao</th>
 <th>
 </thead>
+
 <tbody>
 <tr>
 <tr th:each="administrador : ${administradores} ">
+<td th:text="${administrador.id}"></td>
 <td th:text="${administrador.nome}"></td>
 <td th:text="${administrador.email}"></td>
 <td th:text="${administrador.senha}"></td> 
 <td th:text="${administrador.observacao}"></td> 
-<td><a href="#" class="btn btn-warning">Alterar</td>
+
+<td><a th:href="@{'/administradores/' + ${administrador.id}}" class="btn btn-warning">Alterar</td></a>
+
 <td><a href="#"th:onclick="'if(confirm(\'Confirma?\')){window.location.href= \''+ @{/administradores/{id}(id=${administrador.id})}
  + '/excluir\'}'" class="btn btn-danger">Excluir</td></a>
 
 </tr>
-
 </tbody>
 </table>
 </div>
