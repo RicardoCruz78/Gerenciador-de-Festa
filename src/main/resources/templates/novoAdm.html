@@ -1,60 +1,65 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <title>Novos administradores</title>
 
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-rel="stylesheet"/>
+	rel="stylesheet" />
 
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-rel="stylesheet"/>
+	rel="stylesheet" />
 </head>
 
-<body >
-<div class="container">
-<form method="POST" action="/administradores/criar" onsubmit="return confirm('Confirmação')">
+<body>
+	<div class="container">
+		<form method="POST" action="/administradores/criar"
+			onsubmit="return confirm('Confirmação')">
 
-   <div class="panel panel-default" style="margin: 10px">
- 
-<div class="panel-heading">
+			<div class="panel panel-default" style="margin: 10px">
 
-<h1  class="panel-title">Novos Administradores</h1>
-</div>
-<div class="panel-body">
+				<div class="panel-heading">
 
-<table class="table">
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" required id="nome" name="nome"  placeholder="Digite seu nome">
-    </div>
-    
-    <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" required id="email" name="email" placeholder="Digite seu email">
-     </div>
-     
-    <div class="form-group">
-    <label for="senha">Senha</label>
-    <input type="password" class="form-control"required  id="senha"  name= "senha" placeholder="Digite sua senha">
-     </div>
-     
-    <div class="form-group">
-     <label for="observaçao">Observação</label>
-    <textarea class ="form-control" id="observacaoo"  name= "observacao" placeholder="Digite sua observação"></textarea>  
-      
-    </div>   
-  
-  <button type="submit" class="btn btn-primary">Salvar</button>
- 
- 
+					<h1 class="panel-title">Novos Administradores</h1>
+				</div>
+				<div class="panel-body">
 
-<tbody>
-</tbody>
-</table>
-</div>
-</div>
+					<table class="table">
+						<div class="form-group">
+							<label for="nome">Nome</label> <input type="text"
+								class="form-control" required id="nome" name="nome"
+								placeholder="Digite seu nome">
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email</label> <input type="email"
+								class="form-control" required id="email" name="email"
+								placeholder="Digite seu email">
+						</div>
+
+						<div class="form-group">
+							<label for="senha">Senha</label> <input type="password"
+								class="form-control" required id="senha" name="senha"
+								placeholder="Digite sua senha">
+						</div>
+
+						<div class="form-group">
+							<label for="observaçao">Observação</label>
+							<textarea class="form-control" id="observacaoo" name="observacao"
+								placeholder="Digite sua observação"></textarea>
+
+						</div>
+
+						<button type="submit" class="btn btn-primary">Salvar</button>
+
+
+
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
 </body>
 </html>
