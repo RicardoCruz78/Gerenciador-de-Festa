@@ -24,55 +24,36 @@ rel="stylesheet"/>
 
 <h1  class="panel-title">Editar Administradores</h1>
 </div>
-<div class="panel-body">
-	
-	
+<div class="panel-body">	
 
   <div class="form-group">
-	<form method="POST" action="/administradores/" onsubmit="return confirm('Confirmação')">
-
+	<form method="POST" th:action="@{'/administradores/' + ${administrador.id} + '/atualizar'}">
     <label for="nome">Nome</label>
        <input type="text" class="form-control" th:value="${administrador?.nome}"required id="nome" name="nome"  >
-
     </div>
+    
     <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control"th:value="${administrador?.email}" required id="email" name="email" >
      </div>
+     
     <div class="form-group">
     <label for="senha">Senha</label>
-    <input type="senha" class="form-control" th:value="${administrador?.senha}"required  id="senha"  name= "senha">
+    <input type="password" class="form-control" th:value="${administrador?.senha}"required  id="senha"  name= "senha">
      </div>
+     
     <div class="form-group">
      <label for="observaçao">Observação</label>
-    <textarea class ="form-control" id="observacao" th:value="${administrador?.observacao}" name= "observacao" ></textarea>    </div>
     
-    
+     	<textarea class ="form-control" id="observacao" name="observacao"placeholder="Digite sua obs" th:inline="text">[[${administrador.observacao}]] </textarea>
+      
+         
+     </div>   
   
-  
- 
-   
-  
-  <button type="submit" class="btn btn-primary">Enviar</button>
- 
- </div>
-
-
-
-   
-<thead>
-<tr>
+ 	 <button type="submit" class="btn btn-primary">Enviar</button>
+ </div>   
+</div>
+</div>
 </form>
-</thead>
-<tbody>
-<tr>
-
-
-</tr>
-
-</tbody>
-</table>
-</div>
-</div>
 </body>
 </html>
