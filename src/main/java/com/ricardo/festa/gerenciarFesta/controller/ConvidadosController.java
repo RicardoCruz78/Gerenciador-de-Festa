@@ -11,28 +11,22 @@ import com.ricardo.festa.gerenciarFesta.repository.Convidados;
 
 @Controller
 public class ConvidadosController {
-	
+
 	@Autowired
 	private Convidados convidados;
-	
+
 	@RequestMapping("/convidados")
 	public ModelAndView listar() {
 		ModelAndView modelAndView = new ModelAndView("ListaConvidados");
 		modelAndView.addObject("convidados", convidados.findAll());
-		modelAndView .addObject(new Convidado());		
-		  return modelAndView;
-	} 
-	
-	
-	
+		modelAndView.addObject(new Convidado());
+		return modelAndView;
+	}
 
-	
-	
 	@PostMapping("/convidados")
 	public String salvar(Convidado convidado) {
 		this.convidados.save(convidado);
-		return "redirect:/convidados"; 
+		return "redirect:/convidados";
 	}
 
 }
-

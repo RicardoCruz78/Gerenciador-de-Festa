@@ -1,17 +1,15 @@
 package com.ricardo.festa.gerenciarFesta.model;
 
-
 import java.io.Serializable;
 
-
-import javax.persistence.Column ;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor ;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,35 +19,25 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "administradores")
+@Table(name = "administradores")
 public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	
-	private  Long  id;
-	
-	@Column(name="nomeAdm",length = 140, nullable = false)
-	private  String nome;	
-	
-	
-	@Column(name="emailAdm",length = 120, nullable = false)
-	private String email;	
-	
-	
-	
-	@Column(name="senhaAdm",length = 110, nullable = false)
-	
-   private String senha; 
-	
-	@Column(name="observacaoAdm" )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	private Long id;
+
+	@Column(length = 120, nullable = false)
+
+	private String nome;
+
+	@Column(length = 140, nullable = false)
+	private String email;
+
+	@Column(length = 110, nullable = false)
+	private String senha;
+
+	@Column(length = 200, nullable = true)
 	private String observacao;
 
-	
-	
-
-	
-
-	
-	
 }

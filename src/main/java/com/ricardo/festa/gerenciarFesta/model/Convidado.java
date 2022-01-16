@@ -12,23 +12,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class  Convidado  implements Serializable {
- 
-	
-	private static final long serialVersionUID =  1L;
-	
+public class Convidado implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private Integer quantidadeAcompanhantes;
 	// getters e setters omitidos
-	
+
 }
