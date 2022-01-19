@@ -1,5 +1,6 @@
 package com.ricardo.festa.gerenciarFesta.controller;
 
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.ricardo.festa.gerenciarFesta.model.Administrador;
 import com.ricardo.festa.gerenciarFesta.repository.Administradores;
 
@@ -27,7 +29,14 @@ public class AdministradoresController {
 		modelAndView.addObject(new Administrador());
 		return modelAndView;
 	}
-
+//´´´´´´´´´´´´´´home================
+	
+	@GetMapping("/administradores/home")
+	public String home() {
+		return "/home";
+	}
+	
+	
 //===================Tela do formulario cadastrar=====================================================================
 	@GetMapping("/administradores/novoAdm")
 	public String novoAdm() {
@@ -50,8 +59,7 @@ public class AdministradoresController {
 	 * 
 	 * }
 	 */
-	// ============================Buscando com
-	// Validação=============================================================
+	// ============================Buscando com Validação=================
 
 	@GetMapping("/administradores/{id}")
 	public String busca(@PathVariable Long id, Model model) {

@@ -1,9 +1,18 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
+
+
+
+
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
+
+
+
+
+
 <title>lista de administradores</title>
 
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
@@ -14,59 +23,72 @@
 </head>
 <body>
 
-	<div class="container">
-		<form class="form-inline" method="POST" th:object="${administrador}"
-			th:action="@{/administradores}" style="margin: 20px 0">
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a class="nav-link active"
+			href="/administradores/home">Home</a></li>
+			
+			<li class="nav-item"><a class="nav-link active"
+			href="/administradores/novoAdm">Cadastrar Novo Adm</a></li>
+			
 
-			<a href="/administradores/novoAdm" class="btn btn-primary"
-				style="margin-rigth: 20px;">Novo</a>
+		<li class="nav-item"><a class="nav-link" href="/sair">sair</a></li>
 
-			<h3 class="m-0 font-weight-bold text-primary"
-				style="display: inline-block;">Lista de Administradores</h3>
+	</ul>
 
-			<div class="panel panel-default" style="margin: 10px">
-				<div class="panel-heading">
-					<h1 class="panel-title">Aqui você pode cadastrar, alterar ou
-						excluir Administradores</h1>
-				</div>
 
-				<div class="panel-body">
-					<table class="table">
 
-						<thead>
-							<tr>
-								<th>id</th>
-								<th>nome</th>
-								<th>email</th>
-								<th>senha</th>
-								<th>observacao</th>
-								<th>
-						</thead>
+	<form class="form-inline" method="POST" th:object="${administrador}"
+		th:action="@{/administradores}" style="margin: 20px 0">
 
-						<tbody>
-							<tr>
-							<tr th:each="administrador : ${administradores} ">
-								<td th:text="${administrador.id}"></td>
-								<td th:text="${administrador.nome}"></td>
-								<td th:text="${administrador.email}"></td>
-								<td th:text="${administrador.senha}"></td>
-								<td th:text="${administrador.observacao}"></td>
+		<a href="/administradores/novoAdm" class="btn btn-primary"
+			style="margin-rigth: 20px;">Novo</a>
 
-								<td><a
-									th:href="@{'/administradores/' + ${administrador.id}}"
-									class="btn btn-warning">Alterar</td>
+		<h3 class="m-0 font-weight-bold text-primary"
+			style="display: inline-block;">Lista de Administradores</h3>
 
-								<td><a href="#"
-									th:onclick="'if(confirm(\'Confirma?\')){window.location.href= \''+ @{/administradores/{id}(id=${administrador.id})}
- + '/excluir\'}'"
-									class="btn btn-danger">Excluir</td>
-
-							</tr>
-						</tbody>
-					</table>
-				</div>
+		<div class="panel panel-default" style="margin: 10px">
+			<div class="panel-heading">
+				<h1 class="panel-title">Aqui você pode cadastrar, alterar ou
+					excluir Administradores</h1>
 			</div>
-	</div>
 
+			<div class="panel-body">
+				<table class="table">
+
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>nome</th>
+							<th>email</th>
+							<th>senha</th>
+							<th>observacao</th>
+							<th>
+					</thead>
+
+					<tbody>
+						<tr>
+						<tr th:each="administrador : ${administradores} ">
+							<td th:text="${administrador.id}"></td>
+							<td th:text="${administrador.nome}"></td>
+							<td th:text="${administrador.email}"></td>
+							<td th:text="${administrador.senha}"></td>
+							<td th:text="${administrador.observacao}"></td>
+
+							<td><a
+								th:href="@{'/administradores/' + ${administrador.id}}"
+								class="btn btn-warning">Alterar</td>
+
+							<td><a href="#"
+								th:onclick="'if(confirm(\'Confirma?\')){window.location.href= \''+ @{/administradores/{id}(id=${administrador.id})}
+ + '/excluir\'}'"
+								class="btn btn-danger">Excluir</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		
 </body>
 </html>

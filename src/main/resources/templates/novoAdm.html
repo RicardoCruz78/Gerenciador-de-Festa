@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <title>Novos administradores</title>
@@ -15,8 +16,25 @@
 
 <body>
 	<div class="container">
+	
+	<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="/administradores/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/administradores">Administradores</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/sair">sair</a>
+  </li>
+ 
+</ul>
+	
+	
+				
 		<form method="POST" action="/administradores/criar"
 			onsubmit="return confirm('Confirmação')">
+			
 
 			<div class="panel panel-default" style="margin: 10px">
 
@@ -38,7 +56,6 @@
 								class="form-control" required id="email" name="email"
 								placeholder="Digite seu email">
 						</div>
-
 						<div class="form-group">
 							<label for="senha">Senha</label> <input type="password"
 								class="form-control" required id="senha" name="senha"
@@ -61,5 +78,7 @@
 					</table>
 				</div>
 			</div>
+				
+		
 </body>
 </html>
